@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>home</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static/css/style1.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="{% url 'index'%}" class="logo"><img src="static/images/logo.png" width="250" height="70" alt="LingoPal Logo"></a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-moon"></div>
+      </div>
+
+      <div class="profile">
+         <img src="{{ profile_pic_path }}" class="image" alt="Profile Picture">
+         <h3 class="name">{{ name }}</h3>
+         <p class="role">{{ username }}</p>
+         <a href="{% url 'profile_attempt' %}" class="btn">View Profile</a>
+         <div class="flex-btn">
+             <a href="{% url 'logout_attempt' %}" class="option-btn">Logout</a>
+             <a href="{% url 'register_attempt' %}" class="option-btn">Register</a>
+         </div>
+     </div>
+     
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="{{ profile_pic_path }}" class="image" alt="Profile Picture">
+      <h3 class="name">{{name}}</h3>
+      <p class="role">{{username}}</p>
+      <a href="{% url 'profile_attempt'%}" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="{% url 'home_attempt'%}"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="{% url 'resources_attempt'%}"><i class="fas fa-graduation-cap"></i><span>Resources</span></a>
+      <a href="{% url 'matches_attempt'%}"><i class="fas fa-chalkboard-user"></i><span>Matches</span></a>
+      <a href="{% url 'feedback_attempt'%}"><i class="fas fa-headset"></i><span>Support/Contact us</span></a>
+      <a href="{% url 'settings_attempt'%}"><i class="fas fa-gear"></i><span>Settings</span></a>
+   </nav>
+
+</div>
+
+<section class="home-grid">
+
+   <h1 class="heading">Language Legends: Celebrating Lingopal's Brightest Stars</h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <img src="static/images/pic-2.png" alt="">
+         <h3 class="title">Maria Ross</h3>
+         <p class="story">"I am a native Spanish speaker from Madrid. I found my perfect language partner through Lingopal. With regular practice sessions, I not only mastered English but also developed lasting friendships across the globe."</p>
+      </div>
+
+      <div class="box">
+         <img src="static/images/pic-3.png" alt="">
+         <h3 class="title">Ahmed </h3>
+         <p class="story">"I am an aspiring software developer from Egypt, and I credit Lingopal for my career growth. By exchanging language skills with users, I enhanced my lingual skills and also secured a lucrative job opportunity abroad."</p>
+      </div>
+
+   </div>
+
+   <div class="box-container">
+
+      <div class="box">
+         <img src="static/images/pic-4.png" alt="">
+         <h3 class="title">Michael Johnson</h3>
+         <p class="story">"A French literature enthusiast from Paris, expanded her horizons with Lingopal. Through engaging conversations with native speakers, I delved deep into various cultures, enriched my understanding of the world and that helped me broaden my perspectives."</p>
+      </div>
+
+      <div class="box">
+         <img src="static/images/pic-5.png" alt="">
+         <h3 class="title">Emily Davis</h3>
+         <p class="story">"Hola! I'm Emily, and Lingopal transformed my language learning journey. From beginner to advanced levels, I navigated my way through diverse courses and interactive exercises, achieving bilingual proficiency and opening doors to new opportunities."</p>
+      </div>
+
+   </div>
+
+</section>
+
+
+
+<section class="courses">
+
+   <h1 class="heading">our courses</h1>
+
+    <div class="box-container">
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-2.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/english.jpg" alt="">
+         </div>
+         <h3 class="title">Complete English Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-3.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/hindi.jpg" alt="">
+         </div>
+         <h3 class="title">Complete Hindi tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-4.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/french.png" alt="">
+         </div>
+         <h3 class="title">Complete French Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-5.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/german.jpg" alt="">
+         </div>
+         <h3 class="title">Complete German Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-6.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/gujarati.jpg" alt="">
+         </div>
+         <h3 class="title">Complete Gujarati Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-7.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/marathi.jpg" alt="">
+         </div>
+         <h3 class="title">Complete Marathi Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-8.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/punjabi.png" alt="">
+         </div>
+         <h3 class="title">Complete Punjabi Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-9.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/spanish.jpg" alt="">
+         </div>
+         <h3 class="title">Complete Spanish Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+      <div class="box">
+         <div class="tutor">
+            <img src="static/images/pic-1.jpg" alt="">
+            <div class="info">
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+         <div class="thumb">
+            <img src="static/images/sanskrit.jpg" alt="">
+         </div>
+         <h3 class="title">Complete Sanskrit Tutorial</h3>
+         <a href="{% url 'playlist_attempt'%}" class="inline-btn">View Tutorial</a>
+      </div>
+
+   </div>
+
+   <div class="more-btn">
+      <a href="{% url 'resources_attempt'%}" class="inline-option-btn">view all resources</a>
+   </div>
+
+</section>
+
+
+<!-- custom js file link  -->
+<script src="static/js/script1.js"></script>
+
+   
+</body>
+</html>

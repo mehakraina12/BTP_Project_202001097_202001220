@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>video playlist</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="static/css/style1.css">
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="{% url 'index'%}" class="logo"><img src="static/images/logo.png" width="250" height="70" alt="LingoPal Logo"></a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-moon"></div>
+      </div>
+
+      <div class="profile">
+         <img src="{{profile_pic_path}}" class="image" alt="Profile Picture">
+         <h3 class="name">{{name}}</h3>
+         <p class="role">{{username}}</p>
+         <a href="{% url 'profile_attempt'%}" class="btn">view profile</a>
+         <div class="flex-btn">
+            <a href="{% url 'logout_attempt'%}" class="option-btn">logout</a>
+            <a href="{% url 'register_attempt'%}" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="profile">
+      <img src="{{profile_pic_path}}" class="image" alt="Profile Picture">
+      <h3 class="name">{{name}}</h3>
+      <p class="role">{{username}}</p>
+      <a href="{% url 'profile_attempt'%}" class="btn">view profile</a>
+   </div>
+
+   <nav class="navbar">
+      <a href="{% url 'home_attempt'%}"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="{% url 'resources_attempt'%}"><i class="fas fa-graduation-cap"></i><span>Resources</span></a>
+      <a href="{% url 'matches_attempt'%}"><i class="fas fa-chalkboard-user"></i><span>Matches</span></a>
+      <a href="{% url 'feedback_attempt'%}"><i class="fas fa-headset"></i><span>Support/Contact us</span></a>
+      <a href="{% url 'settings_attempt'%}"><i class="fas fa-gear"></i><span>Settings</span></a>
+   </nav>
+
+</div>
+
+<section class="playlist-details">
+
+   <h1 class="heading">Tutorial details</h1>
+
+   <div class="row">
+
+      <div class="column">
+         <div class="thumb">
+            <img src="static/images/english.jpg" alt="">
+         </div>
+      </div>
+      <div class="column" style="margin-bottom: 80px;">
+         <div class="tutor">
+            <img src="static/images/pic-2.jpg" alt="">
+            <div>
+               <h3>john deo</h3>
+               <span>21-10-2022</span>
+            </div>
+         </div>
+   
+         <div class="details">
+            <h3>Complete English Tutorial</h3>
+            <a href="https://drive.google.com/file/d/1nRyek8oGt6v7cZYu_EUcAO5Nix70XBYL/view?usp=sharing" class="inline-btn" target="_blank">Link 1</a>
+            <a href="https://drive.google.com/file/d/1XvXgERpfySEFdG1mH0z3g9b2Wu-LmBZq/view?usp=sharing" class="inline-btn" target="_blank">Link 2</a>
+            <a href="https://drive.google.com/file/d/1fDYL7Qg2veJSe2FvCb8tdtMMPA7mg9B_/view?usp=sharing" class="inline-btn" target="_blank">Link 3</a>
+        </div>
+        
+      </div>
+   </div>
+
+</section>
+
+<section class="playlist-videos">
+
+   <h1 class="heading">Quizes for Practice</h1>
+
+   <div class="box-container">
+      <a class="box" href="{% url 'quiz_attempt'%}" id="quiz1">
+          <img src="static/images/beginner.png" alt="">
+          <h3>Quiz-1</h3>
+      </a>
+  
+      <a class="box" href="{% url 'quiz_attempt'%}" id="quiz2">
+          <img src="static/images/intermediate.png" alt="">
+          <h3>Quiz-2</h3>
+      </a>
+  
+      <a class="box" href="{% url 'quiz_attempt'%}" id="quiz3">
+          <img src="static/images/advanced.png" alt="">
+          <h3>Quiz-3</h3>
+      </a>
+  </div>
+  
+
+</section>
+
+<!-- custom js file link  -->
+<script src="static/js/script1.js"></script>
+
+   
+</body>
+</html>
